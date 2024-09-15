@@ -5,6 +5,8 @@
 // Package reverse can reverse things, particularly strings.
 package reverse
 
+import "strconv"
+
 // String returns its argument string reversed rune-wise left to right.
 func String(s string) string {
 	r := []rune(s)
@@ -12,4 +14,9 @@ func String(s string) string {
 		r[i], r[j] = r[j], r[i]
 	}
 	return string(r)
+}
+
+func Int(i int) int {
+	i, _ = strconv.Atoi(String(strconv.Itoa(i)))
+	return i
 }
